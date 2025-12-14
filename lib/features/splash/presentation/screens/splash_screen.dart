@@ -15,6 +15,11 @@ class SplashScreen extends StatelessWidget {
               image: AssetImage(AppAssets.logo),
             ),
           ),
+          SizedBox(height: 20),
+          Text("Ready to explore your next favorite book?",
+              textAlign: TextAlign.center,
+              style:TextStyle(fontSize: 18, color: Colors.white54),
+                  ),
         ],
       ),
     );
