@@ -1,5 +1,9 @@
 import 'package:bookup/core/constants/app_assets.dart';
+import 'package:bookup/core/constants/app_constants.dart';
+import 'package:bookup/features/home/presentation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_core/get_core.dart';
+import 'package:get/route_manager.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -15,6 +19,21 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     super.initState();
+    slidingAnimation();
+    navigateToHome();
+  }
+
+  void navigateToHome() {
+     Future.delayed(Duration(seconds: 2), () {
+      Get.to(
+        () => const HomeScreen(),
+        transition: Transition.fade,
+        duration: AppConstants.kTransitionDuration,
+      );
+    });
+  }
+
+  void slidingAnimation() {
     _animationController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 2),
@@ -28,12 +47,13 @@ class _SplashScreenState extends State<SplashScreen>
         );
     _animationController.forward();
   }
-@override
+
+  @override
   void dispose() {
     super.dispose();
     _animationController.dispose();
-    
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
