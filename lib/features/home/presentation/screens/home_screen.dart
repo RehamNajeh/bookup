@@ -1,3 +1,4 @@
+import 'package:bookup/features/home/presentation/screens/widgets/home_screen_body.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -6,9 +7,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Text('Home Screen'),
-      ),
+      body: SafeArea(child: HomeScreenBody())
     );
   }
 }

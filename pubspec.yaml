@@ -32,7 +32,7 @@ dependencies:
   flutter:
     sdk: flutter
   get: ^4.7.3
-  password_strength: ^0.2.0
+  font_awesome_flutter: ^10.12.0
 
 dev_dependencies:
   flutter_lints: ^6.0.0

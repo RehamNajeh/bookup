@@ -2,7 +2,6 @@ import 'package:bookup/core/constants/app_assets.dart';
 import 'package:bookup/core/constants/app_constants.dart';
 import 'package:bookup/features/home/presentation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_core/get_core.dart';
 import 'package:get/route_manager.dart';
 
 class SplashScreen extends StatefulWidget {
