@@ -23,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen>
   }
 
   void navigateToHome() {
-     Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(Duration(seconds: 3), () {
       Get.to(
         () => const HomeScreen(),
         transition: Transition.fade,

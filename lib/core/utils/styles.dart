@@ -6,22 +6,21 @@ abstract class Styles {
     fontSize: 18,
     fontWeight: FontWeight.w600,
   );
-  static final textSmall = TextStyle(
+  static final textStyle14 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w400,
     color: Colors.grey[600],
   );
-   static final textStyle20 = TextStyle(
+  static final textStyle20 = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.normal,
-    fontFamily: AppConstants.kGtSectraFine
   );
-   static final textStyle30 = TextStyle(
+  static final textStyle30 = TextStyle(
     fontSize: 30,
     fontWeight: FontWeight.normal,
-    fontFamily: AppConstants.kGtSectraFine
+    fontFamily: AppConstants.kGtSectraFine,
   );
-   static final textStyle16 = TextStyle(
+  static final textStyle16 = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,
   );
