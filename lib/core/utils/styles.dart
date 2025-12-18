@@ -1,0 +1,28 @@
+import 'package:bookup/core/constants/app_constants.dart';
+import 'package:flutter/material.dart';
+
+abstract class Styles {
+  static final textStyle18 = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+  );
+  static final textSmall = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: Colors.grey[600],
+  );
+   static final textStyle20 = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.normal,
+    fontFamily: AppConstants.kGtSectraFine
+  );
+   static final textStyle30 = TextStyle(
+    fontSize: 30,
+    fontWeight: FontWeight.normal,
+    fontFamily: AppConstants.kGtSectraFine
+  );
+   static final textStyle16 = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+  );
+}
