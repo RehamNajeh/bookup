@@ -1,8 +1,7 @@
 import 'package:bookup/core/constants/app_assets.dart';
-import 'package:bookup/core/constants/app_constants.dart';
-import 'package:bookup/features/home/presentation/screens/home_screen.dart';
+import 'package:bookup/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -24,11 +23,7 @@ class _SplashScreenState extends State<SplashScreen>
 
   void navigateToHome() {
     Future.delayed(Duration(seconds: 3), () {
-      Get.to(
-        () => const HomeScreen(),
-        transition: Transition.fade,
-        duration: AppConstants.kTransitionDuration,
-      );
+     context.go(AppRouter.homeScreen);
     });
   }
 
