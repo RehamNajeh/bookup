@@ -35,12 +35,9 @@ class HomeScreenBody extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30.0),
             child: const BestSellerListView(),
-
           ),
-        )
+        ),
       ],
-      
     );
-    
   }
 }

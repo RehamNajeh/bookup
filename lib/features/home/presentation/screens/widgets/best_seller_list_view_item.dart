@@ -27,7 +27,7 @@ class BestSellerListViewItem extends StatelessWidget {
                     image: AssetImage(AppAssets.bookPlaceholder),
                     fit: BoxFit.cover,
                   ),
-      
+
                   borderRadius: BorderRadius.circular(8),
                 ),
               ),
