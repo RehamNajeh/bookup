@@ -1,4 +1,4 @@
-import 'package:bookup/core/utils/styles.dart';
+import 'package:bookup/core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -13,11 +13,15 @@ class BookRating extends StatelessWidget {
     return Row(
       mainAxisAlignment: mainAxisAlignment,
       children: [
-        Icon(FontAwesomeIcons.solidStar, size: 14, color: Color(0xffFFDD4F)),
-        SizedBox(width: 6),
-        Text("4.8", style: Styles.textStyle16),
-        SizedBox(width: 6),
-        Text("(2390)", style: Styles.textStyle14),
+        Icon(
+          FontAwesomeIcons.solidStar,
+          size: AppSizes.sp14,
+          color: Color(0xffFFDD4F),
+        ),
+        SizedBox(width: AppSizes.w6),
+        Text(AppStrings.rating, style: Styles.textStyle16),
+        SizedBox(width: AppSizes.w6),
+        Text(AppStrings.ratingCount, style: Styles.textStyle14),
       ],
     );
   }

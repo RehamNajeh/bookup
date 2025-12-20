@@ -1,5 +1,4 @@
-import 'package:bookup/core/constants/app_constants.dart';
-import 'package:bookup/core/utils/styles.dart';
+import 'package:bookup/core/core.dart';
 import 'package:bookup/features/home/presentation/screens/widgets/best_seller_list_view.dart';
 import 'package:bookup/features/home/presentation/screens/widgets/books_list_view.dart';
 import 'package:bookup/features/home/presentation/screens/widgets/custom_app_bar.dart';
@@ -14,26 +13,26 @@ class HomeScreenBody extends StatelessWidget {
       slivers: [
         SliverToBoxAdapter(
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(AppSizes.w16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const CustomAppBar(),
                 const BooksListView(),
                 Text(
-                  "Best Sellers",
+                  AppStrings.bestSellers,
                   style: Styles.textStyle18.copyWith(
                     fontFamily: AppConstants.kGtSectraFine,
                   ),
                 ),
-                const SizedBox(height: 20),
+                SizedBox(height: AppSizes.w20),
               ],
             ),
           ),
         ),
         SliverFillRemaining(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30.0),
+            padding: EdgeInsets.symmetric(horizontal: AppSizes.w30),
             child: const BestSellerListView(),
           ),
         ),

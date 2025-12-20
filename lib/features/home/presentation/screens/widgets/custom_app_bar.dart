@@ -1,5 +1,6 @@
-import 'package:bookup/core/constants/app_assets.dart';
+import 'package:bookup/core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
@@ -9,8 +10,17 @@ class CustomAppBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Image.asset(AppAssets.logo, height: 100, width: 100),
-        IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+        Image.asset(
+          AppAssets.logo,
+          height: AppSizes.w100,
+          width: AppSizes.w100,
+        ),
+        IconButton(
+          onPressed: () {
+            context.push(AppRouter.searchScreen);
+          },
+          icon: const Icon(Icons.search),
+        ),
       ],
     );
   }

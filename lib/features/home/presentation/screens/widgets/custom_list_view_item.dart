@@ -1,4 +1,4 @@
-import 'package:bookup/core/constants/app_assets.dart';
+import 'package:bookup/core/core.dart';
 import 'package:flutter/material.dart';
 
 class CustomListViewItem extends StatelessWidget {
@@ -7,7 +7,7 @@ class CustomListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 2.6 / 4,
+      aspectRatio: AppSizes.aspectRatioBooksHorizontal,
       child: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -15,7 +15,7 @@ class CustomListViewItem extends StatelessWidget {
             fit: BoxFit.cover,
           ),
 
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(AppSizes.r8),
         ),
       ),
     );
