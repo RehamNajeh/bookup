@@ -1,7 +1,7 @@
-import 'package:bookup/features/home/presentation/models/access_info.dart';
-import 'package:bookup/features/home/presentation/models/sale_info.dart';
-import 'package:bookup/features/home/presentation/models/search_info.dart';
-import 'package:bookup/features/home/presentation/models/volume_info.dart';
+import 'package:bookup/features/home/data/models/access_info.dart';
+import 'package:bookup/features/home/data/models/sale_info.dart';
+import 'package:bookup/features/home/data/models/search_info.dart';
+import 'package:bookup/features/home/data/models/volume_info.dart';
 
 class BookModel {
   final String? kind;
