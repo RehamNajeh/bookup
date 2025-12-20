@@ -11,9 +11,7 @@ class AppThemes {
         primary: AppColors.primaryColor,
         surface: AppColors.darkSurface,
       ),
-      textTheme: GoogleFonts.montserratTextTheme(
-        ThemeData.dark().textTheme,
-      ),
+      textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
     );
   }
 
@@ -25,9 +23,7 @@ class AppThemes {
         primary: AppColors.lightPrimary,
         surface: AppColors.lightSurface,
       ),
-      textTheme: GoogleFonts.montserratTextTheme(
-        ThemeData.light().textTheme,
-      ),
+      textTheme: GoogleFonts.montserratTextTheme(ThemeData.light().textTheme),
     );
   }
 }

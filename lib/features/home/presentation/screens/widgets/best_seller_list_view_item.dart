@@ -13,7 +13,7 @@ class BestSellerListViewItem extends StatelessWidget {
         context.push(AppRouter.bookDetailsScreen);
       },
       child: SizedBox(
-        height: AppSizes.h125,
+        height: AppSizes.h126,
         child: Row(
           children: [
             AspectRatio(

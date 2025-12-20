@@ -5,6 +5,7 @@ class AppStrings {
 
   // Search Screen
   static const String searchBooks = "Search books...";
+  static const String searchResults = "Search Results";
 
   // Home Screen
   static const String bestSellers = "Best Sellers";
