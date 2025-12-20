@@ -1,8 +1,8 @@
-import 'package:bookup/core/constants/app_colors.dart';
-import 'package:bookup/core/utils/app_router.dart';
+import 'package:bookup/core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+
+final themeNotifier = ThemeNotifier();
 
 void main() {
   runApp(const BooklyApp());
@@ -18,16 +18,17 @@ class BooklyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp.router(
-          routerConfig: AppRouter.router,
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            brightness: Brightness.dark,
-            scaffoldBackgroundColor: AppColors.primaryColor,
-            textTheme: GoogleFonts.montserratTextTheme(
-              ThemeData.dark().textTheme,
-            ),
-          ),
+        return ListenableBuilder(
+          listenable: themeNotifier,
+          builder: (context, child) {
+            return MaterialApp.router(
+              routerConfig: AppRouter.router,
+              debugShowCheckedModeBanner: false,
+              themeMode: themeNotifier.themeMode,
+              theme: AppThemes.lightTheme,
+              darkTheme: AppThemes.darkTheme,
+            );
+          },
         );
       },
     );

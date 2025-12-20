@@ -1,3 +1,4 @@
+import 'package:bookup/core/constants/app_colors.dart';
 import 'package:bookup/core/constants/app_constants.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,7 @@ abstract class Styles {
   static final textStyle14 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w400,
-    color: Colors.grey[600],
+    color: AppColors.grey600,
   );
   static final textStyle20 = TextStyle(
     fontSize: 20,

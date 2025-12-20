@@ -16,7 +16,7 @@ class BookRating extends StatelessWidget {
         Icon(
           FontAwesomeIcons.solidStar,
           size: AppSizes.sp14,
-          color: Color(0xffFFDD4F),
+          color: AppColors.starYellow,
         ),
         SizedBox(width: AppSizes.w6),
         Text(AppStrings.rating, style: Styles.textStyle16),

@@ -39,7 +39,9 @@ class BookDetailsBody extends StatelessWidget {
                 Text(
                   AppStrings.rudyardKipling,
                   style: Styles.textStyle18.copyWith(
-                    color: Colors.grey[600],
+                    color: Theme.of(context).brightness == Brightness.dark
+                        ? AppColors.grey600
+                        : AppColors.grey600,
                     fontStyle: FontStyle.italic,
                   ),
                 ),
@@ -50,7 +52,7 @@ class BookDetailsBody extends StatelessWidget {
                   children: [
                     Expanded(
                       child: CustomButton(
-                        textColor: Colors.black,
+                        textColor: AppColors.black,
                         text: AppStrings.bookPrice,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(AppSizes.r16),
@@ -60,9 +62,9 @@ class BookDetailsBody extends StatelessWidget {
                     ),
                     Expanded(
                       child: CustomButton(
-                        textColor: Colors.white,
+                        textColor: AppColors.white,
                         text: AppStrings.freePreview,
-                        backgroundColor: Color.fromARGB(255, 230, 174, 54),
+                        backgroundColor: AppColors.accentGold,
                         borderRadius: BorderRadius.only(
                           topRight: Radius.circular(AppSizes.r16),
                           bottomRight: Radius.circular(AppSizes.r16),

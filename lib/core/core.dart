@@ -1,8 +1,9 @@
-// Export all core files
 export 'app_sizes.dart';
 export 'app_strings.dart';
 export 'constants/app_assets.dart';
 export 'constants/app_colors.dart';
 export 'constants/app_constants.dart';
 export 'utils/app_router.dart';
+export 'utils/app_themes.dart';
 export 'utils/styles.dart';
+export 'utils/theme_notifier.dart';

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
-    this.backgroundColor = Colors.white,
+    this.backgroundColor = AppColors.white,
     required this.textColor,
     required this.text,
     required this.borderRadius,
