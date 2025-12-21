@@ -4,10 +4,7 @@ class IndustryIdentifier extends Equatable {
   final String? type;
   final String? identifier;
 
-  const IndustryIdentifier({
-    this.type,
-    this.identifier,
-  });
+  const IndustryIdentifier({this.type, this.identifier});
 
   factory IndustryIdentifier.fromJson(Map<String, dynamic> json) {
     return IndustryIdentifier(
@@ -17,10 +14,7 @@ class IndustryIdentifier extends Equatable {
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'type': type,
-      'identifier': identifier,
-    };
+    return {'type': type, 'identifier': identifier};
   }
 
   @override

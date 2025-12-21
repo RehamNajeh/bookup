@@ -41,11 +41,11 @@ class ImageLinks extends Equatable {
 
   @override
   List<Object?> get props => [
-        smallThumbnail,
-        thumbnail,
-        small,
-        medium,
-        large,
-        extraLarge,
-      ];
+    smallThumbnail,
+    thumbnail,
+    small,
+    medium,
+    large,
+    extraLarge,
+  ];
 }

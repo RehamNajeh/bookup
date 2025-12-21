@@ -5,11 +5,7 @@ class Pdf extends Equatable {
   final String? downloadLink;
   final String? acsTokenLink;
 
-  const Pdf({
-    this.isAvailable,
-    this.downloadLink,
-    this.acsTokenLink,
-  });
+  const Pdf({this.isAvailable, this.downloadLink, this.acsTokenLink});
 
   factory Pdf.fromJson(Map<String, dynamic> json) {
     return Pdf(

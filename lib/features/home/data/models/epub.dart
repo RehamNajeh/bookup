@@ -5,11 +5,7 @@ class Epub extends Equatable {
   final String? downloadLink;
   final String? acsTokenLink;
 
-  const Epub({
-    this.isAvailable,
-    this.downloadLink,
-    this.acsTokenLink,
-  });
+  const Epub({this.isAvailable, this.downloadLink, this.acsTokenLink});
 
   factory Epub.fromJson(Map<String, dynamic> json) {
     return Epub(

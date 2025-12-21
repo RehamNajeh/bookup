@@ -29,11 +29,11 @@ class ServerFailure extends Failure {
           return ServerFailure("Bad Certificate");
         case DioExceptionType.unknown:
           return ServerFailure("Unexpected error occurred");
-          
+
         default:
-        if(dioError.message!.contains( 'SocketException')){
-          return ServerFailure("No Internet Connection");
-        }
+          if (dioError.message!.contains('SocketException')) {
+            return ServerFailure("No Internet Connection");
+          }
           return ServerFailure("Something went wrong");
       }
     }

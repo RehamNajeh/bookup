@@ -50,15 +50,14 @@ class SearchField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  TextField(
-        decoration: InputDecoration(
-          hintText: AppStrings.searchBooks,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(AppSizes.r10),
-          ),
-          suffixIcon: const Icon(Icons.search),
+    return TextField(
+      decoration: InputDecoration(
+        hintText: AppStrings.searchBooks,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(AppSizes.r10),
         ),
-      
+        suffixIcon: const Icon(Icons.search),
+      ),
     );
   }
 }

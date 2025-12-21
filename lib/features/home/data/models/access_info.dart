@@ -64,15 +64,15 @@ class AccessInfo extends Equatable {
 
   @override
   List<Object?> get props => [
-        country,
-        viewability,
-        embeddable,
-        publicDomain,
-        textToSpeechPermission,
-        epub,
-        pdf,
-        webReaderLink,
-        accessViewStatus,
-        quoteSharingAllowed,
-      ];
+    country,
+    viewability,
+    embeddable,
+    publicDomain,
+    textToSpeechPermission,
+    epub,
+    pdf,
+    webReaderLink,
+    accessViewStatus,
+    quoteSharingAllowed,
+  ];
 }

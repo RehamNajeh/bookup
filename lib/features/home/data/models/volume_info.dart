@@ -63,8 +63,10 @@ class VolumeInfo extends Equatable {
       publishedDate: json['publishedDate'] as String?,
       industryIdentifiers: json['industryIdentifiers'] != null
           ? (json['industryIdentifiers'] as List)
-              .map((e) => IndustryIdentifier.fromJson(e as Map<String, dynamic>))
-              .toList()
+                .map(
+                  (e) => IndustryIdentifier.fromJson(e as Map<String, dynamic>),
+                )
+                .toList()
           : null,
       readingModes: json['readingModes'] != null
           ? ReadingModes.fromJson(json['readingModes'] as Map<String, dynamic>)
@@ -79,7 +81,8 @@ class VolumeInfo extends Equatable {
       contentVersion: json['contentVersion'] as String?,
       panelizationSummary: json['panelizationSummary'] != null
           ? PanelizationSummary.fromJson(
-              json['panelizationSummary'] as Map<String, dynamic>)
+              json['panelizationSummary'] as Map<String, dynamic>,
+            )
           : null,
       imageLinks: json['imageLinks'] != null
           ? ImageLinks.fromJson(json['imageLinks'] as Map<String, dynamic>)
@@ -103,8 +106,9 @@ class VolumeInfo extends Equatable {
       'title': title,
       'authors': authors,
       'publishedDate': publishedDate,
-      'industryIdentifiers':
-          industryIdentifiers?.map((e) => e.toJson()).toList(),
+      'industryIdentifiers': industryIdentifiers
+          ?.map((e) => e.toJson())
+          .toList(),
       'readingModes': readingModes?.toJson(),
       'pageCount': pageCount,
       'printType': printType,
@@ -128,27 +132,27 @@ class VolumeInfo extends Equatable {
 
   @override
   List<Object?> get props => [
-        title,
-        authors,
-        publishedDate,
-        industryIdentifiers,
-        readingModes,
-        pageCount,
-        printType,
-        categories,
-        maturityRating,
-        allowAnonLogging,
-        contentVersion,
-        panelizationSummary,
-        imageLinks,
-        language,
-        previewLink,
-        infoLink,
-        canonicalVolumeLink,
-        subtitle,
-        publisher,
-        description,
-        averageRating,
-        ratingsCount,
-      ];
+    title,
+    authors,
+    publishedDate,
+    industryIdentifiers,
+    readingModes,
+    pageCount,
+    printType,
+    categories,
+    maturityRating,
+    allowAnonLogging,
+    contentVersion,
+    panelizationSummary,
+    imageLinks,
+    language,
+    previewLink,
+    infoLink,
+    canonicalVolumeLink,
+    subtitle,
+    publisher,
+    description,
+    averageRating,
+    ratingsCount,
+  ];
 }

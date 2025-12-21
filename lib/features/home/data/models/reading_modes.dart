@@ -4,10 +4,7 @@ class ReadingModes extends Equatable {
   final bool? text;
   final bool? image;
 
-  const ReadingModes({
-    this.text,
-    this.image,
-  });
+  const ReadingModes({this.text, this.image});
 
   factory ReadingModes.fromJson(Map<String, dynamic> json) {
     return ReadingModes(
@@ -17,10 +14,7 @@ class ReadingModes extends Equatable {
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'text': text,
-      'image': image,
-    };
+    return {'text': text, 'image': image};
   }
 
   @override

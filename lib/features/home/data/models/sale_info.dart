@@ -48,11 +48,11 @@ class SaleInfo extends Equatable {
 
   @override
   List<Object?> get props => [
-        country,
-        saleability,
-        isEbook,
-        buyLink,
-        listPrice,
-        retailPrice,
-      ];
+    country,
+    saleability,
+    isEbook,
+    buyLink,
+    listPrice,
+    retailPrice,
+  ];
 }
