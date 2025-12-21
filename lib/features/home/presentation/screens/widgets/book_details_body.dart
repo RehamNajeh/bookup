@@ -26,7 +26,7 @@ class BookDetailsBody extends StatelessWidget {
                   padding: EdgeInsets.symmetric(
                     horizontal: width * AppSizes.f015,
                   ),
-                  child: const CustomListViewItem(),
+                  child: const CustomListViewItem(imageUrl: 'https://c8.alamy.com/comp/2JF51GH/paper-chefs-with-megaphone-menu-background-illustration-of-red-torn-paper-background-with-stylized-male-silhouettes-with-chefs-hat-2JF51GH.jpg',),
                 ),
                 SizedBox(height: AppSizes.w20),
                 Text(

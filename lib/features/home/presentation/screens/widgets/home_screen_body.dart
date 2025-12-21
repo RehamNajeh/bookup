@@ -13,12 +13,13 @@ class HomeScreenBody extends StatelessWidget {
       slivers: [
         SliverToBoxAdapter(
           child: Padding(
-            padding: EdgeInsets.all(AppSizes.w16),
+            padding: EdgeInsets.symmetric(horizontal: AppSizes.w16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const CustomAppBar(),
                 const BooksListView(),
+                SizedBox(height: AppSizes.w30),
                 Text(
                   AppStrings.bestSellers,
                   style: Styles.textStyle18.copyWith(

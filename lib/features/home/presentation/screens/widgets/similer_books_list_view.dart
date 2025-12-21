@@ -11,7 +11,7 @@ class SimilerBooksListView extends StatelessWidget {
       height: MediaQuery.of(context).size.height * AppSizes.f015,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) => const CustomListViewItem(),
+        itemBuilder: (context, index) => const CustomListViewItem(imageUrl: 'https://c8.alamy.com/comp/2JF51GH/paper-chefs-with-megaphone-menu-background-illustration-of-red-torn-paper-background-with-stylized-male-silhouettes-with-chefs-hat-2JF51GH.jpg',),
         separatorBuilder: (context, index) => const SizedBox(),
         itemCount: 10,
       ),
