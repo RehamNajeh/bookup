@@ -1,4 +1,3 @@
-
 import 'package:bookup/core/core.dart';
 import 'package:bookup/core/widgets/custom_error_widget.dart';
 import 'package:bookup/features/home/presentation/manager/features_books_cubit/featured_books_cubit.dart';
@@ -18,15 +17,26 @@ class BooksListView extends StatelessWidget {
             height: AppSizes.h180,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) =>  CustomListViewItem(imageUrl: state.featuredBooks[index].volumeInfo.imageLinks.thumbnail ?? ''  ),
-              separatorBuilder: (context, index) =>  SizedBox(width: AppSizes.w16,),
+              itemBuilder: (context, index) => CustomListViewItem(
+                imageUrl:
+                    state
+                        .featuredBooks[index]
+                        .volumeInfo
+                        .imageLinks
+                        .thumbnail ??
+                    '',
+              ),
+              separatorBuilder: (context, index) =>
+                  SizedBox(width: AppSizes.w16),
               itemCount: state.featuredBooks.length,
             ),
           );
         } else if (state is FeaturedBooksFailure) {
           return CustomErrorWidget(errorMessage: state.errMessage);
         } else {
-          return const Center(child: CircularProgressIndicator(color: Colors.white,),);
+          return const Center(
+            child: CircularProgressIndicator(color: Colors.white),
+          );
         }
       },
     );

@@ -13,6 +13,7 @@ class BookDetailsBody extends StatelessWidget {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     return CustomScrollView(
+      physics: BouncingScrollPhysics(),
       slivers: [
         SliverFillRemaining(
           hasScrollBody: false,
@@ -26,7 +27,10 @@ class BookDetailsBody extends StatelessWidget {
                   padding: EdgeInsets.symmetric(
                     horizontal: width * AppSizes.f015,
                   ),
-                  child: const CustomListViewItem(imageUrl: 'https://c8.alamy.com/comp/2JF51GH/paper-chefs-with-megaphone-menu-background-illustration-of-red-torn-paper-background-with-stylized-male-silhouettes-with-chefs-hat-2JF51GH.jpg',),
+                  child: const CustomListViewItem(
+                    imageUrl:
+                        'https://c8.alamy.com/comp/2JF51GH/paper-chefs-with-megaphone-menu-background-illustration-of-red-torn-paper-background-with-stylized-male-silhouettes-with-chefs-hat-2JF51GH.jpg',
+                  ),
                 ),
                 SizedBox(height: AppSizes.w20),
                 Text(
@@ -46,7 +50,7 @@ class BookDetailsBody extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: AppSizes.w16 + 2),
-                BookRating(mainAxisAlignment: MainAxisAlignment.center),
+                BookRating(mainAxisAlignment: MainAxisAlignment.center, rating: '', ratingCount: 0,),
                 SizedBox(height: AppSizes.w16 + 21),
                 Row(
                   children: [

@@ -38,7 +38,7 @@ class SearchResultsListView extends StatelessWidget {
     return ListView.separated(
       padding: EdgeInsets.zero,
       scrollDirection: Axis.vertical,
-      itemBuilder: (context, index) => const BestSellerListViewItem(),
+      itemBuilder: (context, index) => const BestSellerListViewItem(imageUrl: '', title: '', author: '', price: '', rating: '', ratingCount: 0,),
       separatorBuilder: (context, index) => SizedBox(height: AppSizes.w10),
       itemCount: 10,
     );
