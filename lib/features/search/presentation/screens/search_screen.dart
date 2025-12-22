@@ -21,7 +21,7 @@ class SearchScreen extends StatelessWidget {
                 style: Styles.textStyle16.copyWith(fontWeight: FontWeight.bold),
               ),
               SizedBox(height: AppSizes.h10),
-              Expanded(child: const SearchResultsListView()),
+             // Expanded(child: const SearchResultsListView()),
             ],
           ),
         ),
@@ -30,20 +30,20 @@ class SearchScreen extends StatelessWidget {
   }
 }
 
-class SearchResultsListView extends StatelessWidget {
-  const SearchResultsListView({super.key});
+// class SearchResultsListView extends StatelessWidget {
+//   const SearchResultsListView({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return ListView.separated(
-      padding: EdgeInsets.zero,
-      scrollDirection: Axis.vertical,
-      itemBuilder: (context, index) => const BestSellerListViewItem(imageUrl: '', title: '', author: '', price: '', rating: '', ratingCount: 0,),
-      separatorBuilder: (context, index) => SizedBox(height: AppSizes.w10),
-      itemCount: 10,
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return ListView.separated(
+//       padding: EdgeInsets.zero,
+//       scrollDirection: Axis.vertical,
+//       itemBuilder: (context, index) => const BestSellerListViewItem(bookModel: bookmodel,),
+//       separatorBuilder: (context, index) => SizedBox(height: AppSizes.w10),
+//       itemCount: 10,
+//     );
+//   }
+// }
 
 class SearchField extends StatelessWidget {
   const SearchField({super.key});

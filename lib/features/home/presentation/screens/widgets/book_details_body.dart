@@ -1,4 +1,5 @@
 import 'package:bookup/core/core.dart';
+import 'package:bookup/features/home/data/models/book_model.dart';
 import 'package:bookup/features/home/presentation/screens/widgets/book_details_app_bar.dart';
 import 'package:bookup/features/home/presentation/screens/widgets/book_rating_widget.dart';
 import 'package:bookup/features/home/presentation/screens/widgets/custom_button.dart';
@@ -7,8 +8,8 @@ import 'package:bookup/features/home/presentation/screens/widgets/similer_books_
 import 'package:flutter/material.dart';
 
 class BookDetailsBody extends StatelessWidget {
-  const BookDetailsBody({super.key});
-
+  const BookDetailsBody({super.key, required this.bookModel});
+ final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -27,9 +28,9 @@ class BookDetailsBody extends StatelessWidget {
                   padding: EdgeInsets.symmetric(
                     horizontal: width * AppSizes.f015,
                   ),
-                  child: const CustomListViewItem(
-                    imageUrl:
-                        'https://c8.alamy.com/comp/2JF51GH/paper-chefs-with-megaphone-menu-background-illustration-of-red-torn-paper-background-with-stylized-male-silhouettes-with-chefs-hat-2JF51GH.jpg',
+                  child:  CustomListViewItem(
+                    imageUrl: bookModel.volumeInfo.imageLinks.thumbnail ?? '',
+                        //'https://c8.alamy.com/comp/2JF51GH/paper-chefs-with-megaphone-menu-background-illustration-of-red-torn-paper-background-with-stylized-male-silhouettes-with-chefs-hat-2JF51GH.jpg',
                   ),
                 ),
                 SizedBox(height: AppSizes.w20),

@@ -1,23 +1,24 @@
 import 'package:bookup/core/core.dart';
+import 'package:bookup/features/home/data/models/book_model.dart';
 import 'package:bookup/features/home/presentation/screens/widgets/book_rating_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key, required this.imageUrl, required this.title, required this.author, required this.price, required this.rating, required this.ratingCount});
- final String imageUrl ;
- final String title ;
- final String author ;
-  final String price ;
-  final String rating;
-  final int ratingCount;
-  
+  class BestSellerListViewItem extends StatelessWidget {
+    const BestSellerListViewItem({super.key, required this.bookModel});
+//  final String imageUrl ;
+//  final String title ;
+//  final String author ;
+//   final String price ;
+//   final String rating;
+//   final int ratingCount;
+  final BookModel bookModel ;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.push(AppRouter.bookDetailsScreen);
+        context.push(AppRouter.bookDetailsScreen , extra: bookModel);
       },
       child: SizedBox(
         height: AppSizes.h126,
@@ -27,7 +28,7 @@ class BestSellerListViewItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(AppSizes.r8),
               child: AspectRatio(
                 aspectRatio: AppSizes.aspectRatioBooksVertical,
-                child: CachedNetworkImage(fit: BoxFit.fill, imageUrl: imageUrl),
+                child: CachedNetworkImage(fit: BoxFit.fill, imageUrl: bookModel.volumeInfo.imageLinks.thumbnail ?? ''),
               ),
             ),
             SizedBox(width: AppSizes.w10),
@@ -39,7 +40,7 @@ class BestSellerListViewItem extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * AppSizes.f05,
                     child: Text(
-                      title,
+                      bookModel.volumeInfo.title ?? '',
                       style: Styles.textStyle20.copyWith(
                         fontFamily: AppConstants.kGtSectraFine,
                       ),
@@ -48,18 +49,18 @@ class BestSellerListViewItem extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: AppSizes.w3),
-                  Text(author, style: Styles.textStyle14),
+                  Text(bookModel.volumeInfo.authors?.join(', ') ?? '', style: Styles.textStyle14),
                   SizedBox(height: AppSizes.w3),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                       price,
+                       bookModel.saleInfo?.listPrice?.amount.toString() ?? 'free',
                         style: Styles.textStyle20.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      BookRating(rating: rating, ratingCount: ratingCount,),
+                      BookRating(rating: bookModel.volumeInfo.averageRating?.toString() ?? '0', ratingCount: bookModel.volumeInfo.ratingsCount ?? 0,),
                     ],
                   ),
                 ],

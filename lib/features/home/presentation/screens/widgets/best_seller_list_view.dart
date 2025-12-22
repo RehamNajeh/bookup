@@ -17,39 +17,7 @@ class BestSellerListView extends StatelessWidget {
             padding: EdgeInsets.zero,
             scrollDirection: Axis.vertical,
             itemBuilder: (context, index) =>  BestSellerListViewItem(
-              imageUrl: state
-                  .newestBooks[index]
-                  .volumeInfo
-                  .imageLinks
-                  .thumbnail ??
-                  '',
-              title: state
-                  .newestBooks[index]
-                  .volumeInfo
-                  .title ??
-                  '',
-              author: state
-                  .newestBooks[index]
-                  .volumeInfo
-                  .authors
-                  ?.join(', ') ??
-                  'not found',
-              price: state
-                  .newestBooks[index]
-                  .saleInfo
-                  ?.listPrice
-                  ?.amount
-                  .toString() ??
-                  'Free',
-               rating: state
-                  .newestBooks[index]
-                  .volumeInfo
-                  .averageRating
-                  .toString(),
-               ratingCount: state
-                  .newestBooks[index]
-                  .volumeInfo
-                  .ratingsCount ?? 0,
+              bookModel: state.newestBooks[index],
                   
             ),
             separatorBuilder: (context, index) =>
