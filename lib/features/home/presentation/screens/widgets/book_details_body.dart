@@ -6,10 +6,11 @@ import 'package:bookup/features/home/presentation/screens/widgets/custom_button.
 import 'package:bookup/features/home/presentation/screens/widgets/custom_list_view_item.dart';
 import 'package:bookup/features/home/presentation/screens/widgets/similer_books_list_view.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BookDetailsBody extends StatelessWidget {
   const BookDetailsBody({super.key, required this.bookModel});
- final BookModel bookModel;
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -28,21 +29,21 @@ class BookDetailsBody extends StatelessWidget {
                   padding: EdgeInsets.symmetric(
                     horizontal: width * AppSizes.f015,
                   ),
-                  child:  CustomListViewItem(
+                  child: CustomListViewItem(
                     imageUrl: bookModel.volumeInfo.imageLinks.thumbnail ?? '',
-                        //'https://c8.alamy.com/comp/2JF51GH/paper-chefs-with-megaphone-menu-background-illustration-of-red-torn-paper-background-with-stylized-male-silhouettes-with-chefs-hat-2JF51GH.jpg',
+                    //'https://c8.alamy.com/comp/2JF51GH/paper-chefs-with-megaphone-menu-background-illustration-of-red-torn-paper-background-with-stylized-male-silhouettes-with-chefs-hat-2JF51GH.jpg',
                   ),
                 ),
                 SizedBox(height: AppSizes.w20),
                 Text(
-                  AppStrings.theJungleBook,
+                  bookModel.volumeInfo.title ?? '',
                   style: Styles.textStyle30.copyWith(
                     fontFamily: AppConstants.kGtSectraFine,
                   ),
                 ),
                 SizedBox(height: AppSizes.w3),
                 Text(
-                  AppStrings.rudyardKipling,
+                  bookModel.volumeInfo.authors?.join(', ') ?? '',
                   style: Styles.textStyle18.copyWith(
                     color: Theme.of(context).brightness == Brightness.dark
                         ? AppColors.grey600
@@ -51,14 +52,20 @@ class BookDetailsBody extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: AppSizes.w16 + 2),
-                BookRating(mainAxisAlignment: MainAxisAlignment.center, rating: '', ratingCount: 0,),
+                BookRating(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  rating: bookModel.volumeInfo.averageRating?.toString() ?? '0',
+                  ratingCount: bookModel.volumeInfo.ratingsCount ?? 0,
+                ),
                 SizedBox(height: AppSizes.w16 + 21),
                 Row(
                   children: [
                     Expanded(
                       child: CustomButton(
                         textColor: AppColors.black,
-                        text: AppStrings.bookPrice,
+                        text: bookModel.saleInfo?.listPrice?.amount != null
+                            ? '\$${bookModel.saleInfo?.listPrice?.amount}'
+                            : "free",
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(AppSizes.r16),
                           bottomLeft: Radius.circular(AppSizes.r16),
@@ -67,6 +74,14 @@ class BookDetailsBody extends StatelessWidget {
                     ),
                     Expanded(
                       child: CustomButton(
+                        onPressed: () async {
+                          final Uri url = Uri.parse(
+                            bookModel.volumeInfo.previewLink ?? 'https://www.google.com',
+                          );
+                          if (await canLaunchUrl(url)) {
+                            launchUrl(url);
+                          }
+                        },
                         textColor: AppColors.white,
                         text: AppStrings.freePreview,
                         backgroundColor: AppColors.accentGold,

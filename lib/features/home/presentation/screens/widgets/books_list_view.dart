@@ -4,6 +4,7 @@ import 'package:bookup/features/home/presentation/manager/features_books_cubit/f
 import 'package:bookup/features/home/presentation/screens/widgets/custom_list_view_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class BooksListView extends StatelessWidget {
   const BooksListView({super.key});
@@ -17,14 +18,22 @@ class BooksListView extends StatelessWidget {
             height: AppSizes.h180,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) => CustomListViewItem(
-                imageUrl:
-                    state
-                        .featuredBooks[index]
-                        .volumeInfo
-                        .imageLinks
-                        .thumbnail ??
-                    '',
+              itemBuilder: (context, index) => GestureDetector(
+                onTap: () {
+                  context.push(
+                    AppRouter.bookDetailsScreen,
+                    extra: state.featuredBooks[index],
+                  );
+                },
+                child: CustomListViewItem(
+                  imageUrl:
+                      state
+                          .featuredBooks[index]
+                          .volumeInfo
+                          .imageLinks
+                          .thumbnail ??
+                      '',
+                ),
               ),
               separatorBuilder: (context, index) =>
                   SizedBox(width: AppSizes.w16),

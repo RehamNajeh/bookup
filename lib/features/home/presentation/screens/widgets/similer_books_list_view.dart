@@ -21,8 +21,8 @@ class SimilerBooksListView extends StatelessWidget {
       itemBuilder: (context, index) => CustomListViewItem(
         imageUrl: state.similerBooks[index].volumeInfo.imageLinks.thumbnail ?? '',
       ),
-      separatorBuilder: (context, index) => const SizedBox(),
-      itemCount: 10,
+      separatorBuilder: (context, index) =>  SizedBox(width: AppSizes.w10),
+      itemCount: state.similerBooks.length,
     ),
   );
 }else if (state is SimilerBooksCubitFailure) {

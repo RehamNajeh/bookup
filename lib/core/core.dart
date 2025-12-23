@@ -7,3 +7,6 @@ export 'utils/app_router.dart';
 export 'utils/app_themes.dart';
 export 'utils/styles.dart';
 export 'utils/theme_notifier.dart';
+export 'utils/service_locator.dart';
+export 'utils/api_service.dart';
+export 'errors/failure.dart';
