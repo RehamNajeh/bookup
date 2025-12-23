@@ -4,6 +4,8 @@ import 'package:bookup/features/home/data/repos/home_repo_impl.dart';
 import 'package:bookup/features/home/presentation/manager/similer_books_cubit/similer_books_cubit.dart';
 import 'package:bookup/features/home/presentation/screens/book_details_screen.dart';
 import 'package:bookup/features/home/presentation/screens/home_screen.dart';
+import 'package:bookup/features/search/data/repo/search_repo_impl.dart';
+import 'package:bookup/features/search/presentation/manager/search_cubit/search_cubit.dart';
 import 'package:bookup/features/search/presentation/screens/search_screen.dart';
 import 'package:bookup/features/splash/presentation/screens/splash_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -41,7 +43,10 @@ abstract class AppRouter {
       GoRoute(
         path: searchScreen,
         builder: (context, state) {
-          return const SearchScreen();
+          return BlocProvider(
+            create: (context) => SearchCubit(getIt.get<SearchRepoImpl>()),
+            child: const SearchScreen(),
+          );
         },
       ),
     ],

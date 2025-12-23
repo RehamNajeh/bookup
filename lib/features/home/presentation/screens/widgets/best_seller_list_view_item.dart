@@ -7,12 +7,7 @@ import 'package:go_router/go_router.dart';
 
   class BestSellerListViewItem extends StatelessWidget {
     const BestSellerListViewItem({super.key, required this.bookModel});
-//  final String imageUrl ;
-//  final String title ;
-//  final String author ;
-//   final String price ;
-//   final String rating;
-//   final int ratingCount;
+
   final BookModel bookModel ;
   @override
   Widget build(BuildContext context) {

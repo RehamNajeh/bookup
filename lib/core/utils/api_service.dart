@@ -8,7 +8,7 @@ class ApiService {
 
   Future<Map<String, dynamic>> get({
     required String endpoint,
-    // Map<String, dynamic>? queryParameters,
+     Map<String, dynamic>? queryParameters,
   }) async {
     final response = await _dio.get("$_baseUrl$endpoint");
     return response.data;
