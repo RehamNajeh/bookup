@@ -1,21 +1,17 @@
-import 'package:bookup/core/constants/app_assets.dart';
+import 'package:bookup/core/core.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class CustomListViewItem extends StatelessWidget {
-  const CustomListViewItem({super.key});
-
+  const CustomListViewItem({super.key, required this.imageUrl});
+  final String imageUrl;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 120,
-      height: 180,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(AppAssets.bookPlaceholder),
-          fit: BoxFit.cover,
-        ),
-
-        borderRadius: BorderRadius.circular(8),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(AppSizes.r16),
+      child: AspectRatio(
+        aspectRatio: AppSizes.aspectRatioBooksHorizontal,
+        child: CachedNetworkImage(fit: BoxFit.fill, imageUrl: imageUrl),
       ),
     );
   }

@@ -1,8 +1,6 @@
-import 'package:bookup/core/constants/app_assets.dart';
-import 'package:bookup/core/constants/app_constants.dart';
-import 'package:bookup/features/home/presentation/screens/home_screen.dart';
+import 'package:bookup/core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -23,12 +21,8 @@ class _SplashScreenState extends State<SplashScreen>
   }
 
   void navigateToHome() {
-     Future.delayed(Duration(seconds: 3), () {
-      Get.to(
-        () => const HomeScreen(),
-        transition: Transition.fade,
-        duration: AppConstants.kTransitionDuration,
-      );
+    Future.delayed(Duration(seconds: 3), () {
+      context.go(AppRouter.homeScreen);
     });
   }
 
@@ -60,16 +54,19 @@ class _SplashScreenState extends State<SplashScreen>
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(child: Image(image: AssetImage(AppAssets.logo))),
-          SizedBox(height: 20),
+          SizedBox(height: AppSizes.h20),
           AnimatedBuilder(
             animation: _slidinganimation,
             builder: (BuildContext context, _) {
               return SlideTransition(
                 position: _slidinganimation,
                 child: Text(
-                  "Ready to explore your next favorite book?",
+                  AppStrings.readyToExplore,
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 18, color: Colors.white54),
+                  style: TextStyle(
+                    fontSize: AppSizes.sp18,
+                    color: AppColors.white54,
+                  ),
                 ),
               );
             },
